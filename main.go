@@ -19,22 +19,22 @@ func main() {
 
 	for finish {
 		//
-		fmt.Print(" Menü item adını giriniz : ")
+		fmt.Print(" Enter the name of the menu item : ")
 		fmt.Print(" ")
 		scanner := bufio.NewScanner(os.Stdin)
 		if scanner.Scan() {
 			menuItemName = scanner.Text()
 		}
 		//
-		fmt.Print(" Menü item ikon yolunu giriniz (.ico) : ")
+		fmt.Print(" Enter the menu item icon path (.ico) : ")
 		fmt.Print(" ")
 		fmt.Scan(&menuItemIconAddress)
 		//
-		fmt.Print(` Yapacağı işi giriniz (örn. "C:\Windows\System32\notepad.exe") : `)
+		fmt.Print(` Path of the executable (i.e. "C:\Windows\System32\notepad.exe") : `)
 		fmt.Print(" ")
 		fmt.Scan(&menuItemJob)
 
-		fmt.Print(" Menü eklenecek emin misiniz? : ")
+		fmt.Print(" Are you sure you want the menu item to be added? : ")
 		complete := Ask4confirm()
 		if complete {
 		} else {
@@ -53,7 +53,7 @@ func main() {
 		nilControl(e)
 		a.SetStringValue("Icon", menuItemIconAddress)
 
-		fmt.Print(" Yeni bir tane eklemek ister misiniz? : ")
+		fmt.Print(" Do you want to add another one? : ")
 		isConfirmed := Ask4confirm()
 		if isConfirmed {
 			finish = true
